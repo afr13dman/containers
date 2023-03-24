@@ -32,6 +32,16 @@ class Node():
         ret += ')'
         return ret
 
+    def __iter__(self):
+        if self:
+            if self.left:
+                for elem in self.left:
+                    yield elem
+            yield self.value
+            if self.right:
+                for elem in self.right:
+                    yield elem
+
 
 class BinaryTree():
     '''
