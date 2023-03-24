@@ -96,7 +96,7 @@ class BST(BinaryTree):
             return BST._insert(value, self.root)
         else:
             self.root = Node(value)
-    
+
     @staticmethod
     def _insert(value, node):
         '''
@@ -228,7 +228,7 @@ class BST(BinaryTree):
         Use a recursive helper function.
         '''
         self.root = self._remove_recursive(value, self.root)
-    
+
     @staticmethod
     def _remove_recursive(value, node):
         '''
