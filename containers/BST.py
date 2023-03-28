@@ -62,7 +62,7 @@ class BST(BinaryTree):
         '''
         a = self.to_list('inorder')
         b = t2.to_list('inorder')
-        
+
         if len(a) != len(b):
             return False
         else:
