@@ -121,7 +121,7 @@ class BST(BinaryTree):
         Create a staticmethod helper function following the pattern of _is_bst_satisfied.
         '''
         if self.root:
-            return BST._insert(value, self.root)
+            BST._insert(value, self.root)
         else:
             self.root = Node(value)
 
@@ -131,21 +131,16 @@ class BST(BinaryTree):
         This is a helper function for insert and
         not intended to be called directly by the user.
         '''
-        ret = False
-        if value != node.value:
-            if value < node.value:
-                if node.left:
-                    ret &= BST._insert(value, node.left)
-                else:
-                    node.left = Node(value)
-                    ret = True
-            if value > node.value:
-                if node.right:
-                    ret &= BST._insert(value, node.right)
-                else:
-                    node.right = Node(value)
-                    ret = True
-        return ret
+        if value < node.value:
+            if node.left:
+                BST._insert(value, node.left)
+            else:
+                node.left = Node(value)
+        elif value > node.value:
+            if node.right:
+                BST._insert(value, node.right)
+            else:
+                node.right = Node(value)
 
     def insert_list(self, xs):
         '''
