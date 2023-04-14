@@ -307,7 +307,6 @@ def test__BST_iterable_1():
     except StopIteration:
         pass
 
-
 @given(xs=ints)
 def test__BST_iterable_2(xs):
     xs = list(set(xs))
@@ -321,7 +320,6 @@ def test__BST_iterable_2(xs):
     bst2 = BST(xs2)
 
     assert list(bst1) == list(bst2)
-
 
 @given(xs=ints)
 def test__BST_eq(xs):
